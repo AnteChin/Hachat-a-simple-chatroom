@@ -228,7 +228,7 @@ class Client {
     @Synchronized
     fun closeConnection(): Boolean {
         try {
-            sendMessage("CLOSE")// 发送断开连接命令给服务器
+            sendMessage(me.name + DEFAULT.DELIM + "CLOSE" + DEFAULT.DELIM + me.id)// 发送断开连接命令给服务器
             messageThread!!.stop()// 停止接受消息线程
             // 释放资源
             reader.close()
@@ -239,7 +239,7 @@ class Client {
             e1.printStackTrace()
             isConnected = true
         }
-        return isConnected
+        return !isConnected
     }
 
     internal inner class MessageThread(private val reader: BufferedReader?, private val textArea: JTextArea) : Thread() {
@@ -286,8 +286,9 @@ class Client {
                             }
                             "DELETE" -> {// 有用户下线更新在线列表
                                 val username = stringTokenizer.nextToken()
+                                val userId = stringTokenizer.nextToken()
                                 onLineUsers.remove(username)
-                                listModel.removeElement(username)
+                                listModel.removeElement("${username}(${userId})")
                             }
                             "USERLIST" -> {// 加载在线用户列表
                                 val size = stringTokenizer.nextToken().toInt()

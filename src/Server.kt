@@ -204,7 +204,7 @@ class Server {
                     var found = false
                     for (i in clients.indices.reversed()) {
                         if (clients[i].user!!.id == id!!.toInt()) {
-                            if(clients[i].isBan){  //如果确实被禁言了
+                            if (clients[i].isBan) {  //如果确实被禁言了
                                 clients[i].writer!!.println("\n${Calendar.getInstance().time}" +
                                         "\n服务器将你解禁") //用户端显示这段
                                 clients[i].writer!!.flush()
@@ -390,21 +390,60 @@ class Server {
                 }
             }
         }
-
-        // 转发消息
+        // 转发消息,发过来的信息格式为 (发送人名字,指令,内容)
         private fun dispatcherMessage(message: String) {
             val stringTokenizer = StringTokenizer(message, DEFAULT.DELIM)
             val speaker = stringTokenizer.nextToken()
             val owner = stringTokenizer.nextToken()
             val content = stringTokenizer.nextToken()
-            if (owner == "REGISTER") {
-                isRegister = true
-                contentArea.append("\n${Calendar.getInstance().time}" +
-                        "\n${speaker}注册了")
-                writer!!.println("\n${Calendar.getInstance().time}" +
-                        "\n注册成功")
-                writer!!.flush()
-                return
+            //一级指令,包括 注册 和 退出
+            when(owner){
+                "REGISTER" -> {
+                    if (!isRegister) {
+                        isRegister = true
+                        contentArea.append("\n${Calendar.getInstance().time}" +
+                                "\n${speaker}注册了")
+                        writer!!.println("\n${Calendar.getInstance().time}" +
+                                "\n注册成功")
+                        writer!!.flush()
+                        return
+                    } else { //如果已经注册
+                        writer!!.println("\n${Calendar.getInstance().time}" +
+                                "\n请不要重复注册")
+                        writer!!.flush()
+                    }
+                }
+                "CLOSE" ->{
+                    if(isRegister){
+                        contentArea.append("\n${Calendar.getInstance().time}" +
+                                "\n来自ip ${user!!.ip} 的${user!!.name}下线" +
+                                "\n 现有用户${clients.size - 1}人\n")
+                    } else {
+                        contentArea.append("\n${Calendar.getInstance().time}" +
+                                "\n未注册用户${speaker}离开了服务器" +
+                                "\n 现有用户${clients.size - 1}人\n")
+                    }
+                    reader!!.close()
+                    writer!!.close()
+                    socket!!.close()
+
+                    // 向所有在线用户发送该用户的下线命令
+                    for (i in clients.indices.reversed()) {
+                        clients[i].writer!!.println("DELETE" + DEFAULT.DELIM + speaker + DEFAULT.DELIM + content)
+                        clients[i].writer!!.flush()
+                    }
+
+                    listModel.removeElement("${speaker}(${content})")// 更新在线列表
+                    // 删除此条客户端服务线程
+                    for (i in clients.indices.reversed()) {
+                        if (clients[i].user!!.name == user!!.name) {
+                            val temp = clients[i]
+                            temp.stop()// 停止这条服务线程
+                            clients.removeAt(i)// 删除此用户的服务线程
+                            return
+                        }
+                    }
+                }
             }
             if (!isRegister) {
                 contentArea.append("\n${Calendar.getInstance().time}" +
@@ -421,7 +460,7 @@ class Server {
                 writer!!.flush()
                 return
             } else {
-                when (owner) {
+                when (owner) { //二级指令
                     "ALL" -> {
                         for (i in clients.indices.reversed()) {  //在用户面板上显示这段
                             clients[i].writer!!.println("\n${Calendar.getInstance().time}" +
@@ -438,32 +477,6 @@ class Server {
                         writer!!.flush()
                         contentArea.append("\n${Calendar.getInstance().time}" +
                                 "\n$speaker 请求了一次帮助")
-                    }
-                    "CLOSE" -> {
-                        contentArea.append("\n${Calendar.getInstance().time}" +
-                                "\n来自ip ${user!!.ip} 的${user!!.name}下线" +
-                                "\n 现有用户${clients.size - 1}人\n")
-                        reader!!.close()
-                        writer!!.close()
-                        socket!!.close()
-
-                        // 向所有在线用户发送该用户的下线命令
-                        for (i in clients.indices.reversed()) {
-                            clients[i].writer!!.println(
-                                    "DELETE" + DEFAULT.DELIM + user!!.name)
-                            clients[i].writer!!.flush()
-                        }
-
-                        listModel.removeElement(user!!.name)// 更新在线列表
-                        // 删除此条客户端服务线程
-                        for (i in clients.indices.reversed()) {
-                            if (clients[i].user == user) {
-                                val temp = clients[i]
-                                clients.removeAt(i)// 删除此用户的服务线程
-                                temp.stop()// 停止这条服务线程
-                                return
-                            }
-                        }
                     }
                     "CHAT" -> {
                         //content in this block represent id
