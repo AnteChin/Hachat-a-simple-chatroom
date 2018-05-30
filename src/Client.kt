@@ -262,6 +262,7 @@ class Client {
                     val stringTokenizer = StringTokenizer(message, DEFAULT.DELIM)
                     if (stringTokenizer.hasMoreTokens()) {
                         val command = stringTokenizer.nextToken()// 服务器的命令
+                        doc.setParagraphAttributes(0, 1, textPane.chatting, false)
                         when (command) { //处理服务器发回来的指令
                             "CLOSE" -> {
                                 doc.insertString(0, "服务器已关闭!\r\n", null)
@@ -274,9 +275,11 @@ class Client {
                                 val userId: String? = stringTokenizer.nextToken()
                                 if (username != null && userIp != null && userId != null) {
                                     val user = User(username, userIp, userId)
-                                    doc.insertString(0, "\n${Calendar.getInstance().time}" +
-                                            "\nid: ${userId}, 来自${userIp} 的用户${username}" +
+                                    doc.setParagraphAttributes(0, 1, textPane.friend, false)
+                                    doc.insertString(0, "\nid: ${userId}, 来自${userIp} 的用户${username}" +
                                             "\n上线了!\n", null)
+                                    doc.setParagraphAttributes(0, 1, textPane.calander, false)
+                                    doc.insertString(0,"\n${Calendar.getInstance().time}",null)//设置日历的格式
                                     onLineUsers[username] = user
                                     listModel.addElement("$username($userId)")
                                 }
@@ -312,8 +315,8 @@ class Client {
                             else -> {
                                 message = message.replace(DEFAULT.NEWLINE,"\n")
                                 doc.insertString(0, "\n$message", null)
-                                doc.setParagraphAttributes(0, 1, textPane.style, false)
-                                doc.insertString(0,"${Calendar.getInstance().time}",null)//设置日历的格式
+                                doc.setParagraphAttributes(0, 1, textPane.calander, false)
+                                doc.insertString(0,"\n${Calendar.getInstance().time}",null)//设置日历的格式
                             }
 
                         }

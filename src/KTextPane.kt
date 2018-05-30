@@ -3,21 +3,40 @@ import javax.swing.text.*;
 import java.awt.*;
 
 
-class KTextPane() : JTextPane(){
+class KTextPane() : JTextPane() {
     private val imageIcon = ImageIcon("C:\\Users\\asus\\Desktop\\Hachat\\src\\background.jpg")
     private val image = imageIcon.image
     val styleContext = StyleContext()
-    val style : Style = styleContext.addStyle("time",null)
+    val calander: Style = styleContext.addStyle("time", null)
+    val chatting: Style = styleContext.addStyle("chatting", null)
+    val friend: Style = styleContext.addStyle("new friend", null)
 
     init {
         isEditable = false
         foreground = Color.blue
         isOpaque = false
 
-        style.addAttribute(StyleConstants.Foreground, Color.red);
-        style.addAttribute(StyleConstants.FontSize, 16);
-        style.addAttribute(StyleConstants.FontFamily, "serif");
-        style.addAttribute(StyleConstants.Bold, true);
+        with(calander) {
+            addAttribute(StyleConstants.Foreground, Color.DARK_GRAY)
+            addAttribute(StyleConstants.FontSize, 14)
+            addAttribute(StyleConstants.FontFamily, "Rockwell")
+            addAttribute(StyleConstants.Italic, false)
+        }
+
+        with(chatting) {
+                addAttribute(StyleConstants.Foreground, Color.BLACK)
+            addAttribute(StyleConstants.FontSize, 16)
+            addAttribute(StyleConstants.FontFamily, "等线")
+            addAttribute(StyleConstants.Italic, false)
+        }
+
+        with(friend) {
+            addAttribute(StyleConstants.Foreground, Color.DARK_GRAY)
+            addAttribute(StyleConstants.FontSize, 14)
+            addAttribute(StyleConstants.FontFamily, "宋体")
+            addAttribute(StyleConstants.Italic, true)
+        }
+
     }
 
     override fun paint(g: Graphics?) {
