@@ -184,8 +184,7 @@ class Server {
                     var found = false
                     for (i in clients.indices.reversed()) {
                         if (clients[i].user!!.id == id!!.toInt()) {
-                            clients[i].writer!!.println("\n${Calendar.getInstance().time}" +
-                                    "\n服务器将你禁言") //用户端显示这段
+                            clients[i].writer!!.println("服务器将你禁言${DEFAULT.NEWLINE}") //用户端显示这段
                             clients[i].writer!!.flush()
                             clients[i].isBan = true
                             found = true
@@ -205,8 +204,7 @@ class Server {
                     for (i in clients.indices.reversed()) {
                         if (clients[i].user!!.id == id!!.toInt()) {
                             if (clients[i].isBan) {  //如果确实被禁言了
-                                clients[i].writer!!.println("\n${Calendar.getInstance().time}" +
-                                        "\n服务器将你解禁") //用户端显示这段
+                                clients[i].writer!!.println("服务器将你解禁${DEFAULT.NEWLINE}") //用户端显示这段
                                 clients[i].writer!!.flush()
                                 clients[i].isBan = false
                                 contentArea.append("\n${Calendar.getInstance().time}" +
@@ -277,9 +275,8 @@ class Server {
 
     private fun sendServerMessage(message: String) {//在用户的输入流中写入消息
         for (i in clients.size - 1 downTo 0) {
-            clients[i].writer!!.println("\n${Calendar.getInstance().time}" +
-                    "\n服务器(群发消息): " +
-                    "   \n$message")
+            clients[i].writer!!.println("服务器(群发消息): ${DEFAULT.NEWLINE}" +
+                                        "   $message${DEFAULT.NEWLINE}")
             clients[i].writer!!.flush()
         }
     }
@@ -351,12 +348,12 @@ class Server {
                 val st = StringTokenizer(inf, DEFAULT.DELIM)
                 user = User(st.nextToken(), st.nextToken(), st.nextToken().toInt()) //Client把自己的姓名与端口信息写了进去
                 // 客户端连接成功信息
-                writer!!.println("\n${Calendar.getInstance().time}" +
-                        "\n与服务器连接成功!" +
-                        "\nIP: ${user!!.ip} " +
-                        "\n用户名: ${user!!.name}" +
-                        "\nid: ${user!!.id}" +
-                        "\n输入-help可以获得使用说明")
+                writer!!.println(
+                        "与服务器连接成功!${DEFAULT.NEWLINE}" +
+                        "IP: ${user!!.ip}${DEFAULT.NEWLINE} " +
+                        "用户名: ${user!!.name}${DEFAULT.NEWLINE}" +
+                        "id: ${user!!.id}${DEFAULT.NEWLINE}" +
+                        "输入-help可以获得使用说明${DEFAULT.NEWLINE}")
                 writer!!.flush()
                 // 反馈当前在线用户信息
                 if (clients.size > 0) {
@@ -369,8 +366,7 @@ class Server {
                 }
                 // 当一个进程新上线时, 向所有在线用户发送该用户上线命令
                 for (i in clients.indices.reversed()) {
-                    clients[i].writer!!.println(
-                            "ADD" + DEFAULT.DELIM + user!!.name + DEFAULT.DELIM + user!!.ip + DEFAULT.DELIM + user!!.id)
+                    clients[i].writer!!.println("ADD" + DEFAULT.DELIM + user!!.name + DEFAULT.DELIM + user!!.ip + DEFAULT.DELIM + user!!.id)
                     clients[i].writer!!.flush()
                 }
             } catch (e: IOException) {
@@ -403,14 +399,14 @@ class Server {
                         isRegister = true
                         contentArea.append("\n${Calendar.getInstance().time}" +
                                 "\n${speaker}注册了")
-                        writer!!.println("\n${Calendar.getInstance().time}" +
-                                "\n注册成功")
+                        writer!!.println("注册成功${DEFAULT.NEWLINE}")
                         writer!!.flush()
                         return
                     } else { //如果已经注册
-                        writer!!.println("\n${Calendar.getInstance().time}" +
-                                "\n请不要重复注册")
+                        writer!!.println("请不要重复注册${DEFAULT.NEWLINE}")
                         writer!!.flush()
+                        contentArea.append("\n${Calendar.getInstance().time}" +
+                                "\n${speaker}试图重复注册")
                     }
                 }
                 "CLOSE" ->{
@@ -448,35 +444,30 @@ class Server {
             if (!isRegister) {
                 contentArea.append("\n${Calendar.getInstance().time}" +
                         "\n未注册用户${speaker}请求服务")
-                writer!!.println("\n${Calendar.getInstance().time}" +
-                        "\n请先注册")
+                writer!!.println("请先注册${DEFAULT.NEWLINE}")
                 writer!!.flush()
                 return
             } else if (isBan) {
                 contentArea.append("\n${Calendar.getInstance().time}" +
                         "\n禁言用户${speaker}请求服务")
-                writer!!.println("\n${Calendar.getInstance().time}" +
-                        "\n你被服务器禁言了")
+                writer!!.println("你被服务器禁言了${DEFAULT.NEWLINE}")
                 writer!!.flush()
                 return
             } else {
                 when (owner) { //二级指令
                     "ALL" -> {
                         for (i in clients.indices.reversed()) {  //在用户面板上显示这段
-                            clients[i].writer!!.println("\n${Calendar.getInstance().time}" +
-                                    "\n$speaker: " +
-                                    "\n        $content") //用户端显示这段
+                            clients[i].writer!!.println("$speaker: ${DEFAULT.NEWLINE}" +
+                                                        "        $content${DEFAULT.NEWLINE}") //用户端显示这段
                             clients[i].writer!!.flush()
                         }
                         contentArea.append("\n${Calendar.getInstance().time}" +
                                 "\n$speaker(群发消息): $content")
                     }
                     "HELP" -> {
-                        writer!!.println("\n${Calendar.getInstance().time}" +
-                                "\n${DEFAULT.MANUAL}") //用户端显示这段
+                        writer!!.println("${DEFAULT.NEWLINE}${DEFAULT.MANUAL}${DEFAULT.NEWLINE}") //用户端显示这段
                         writer!!.flush()
-                        contentArea.append("\n${Calendar.getInstance().time}" +
-                                "\n$speaker 请求了一次帮助")
+                        contentArea.append("${DEFAULT.NEWLINE}$speaker 请求了一次帮助")
                     }
                     "CHAT" -> {
                         //content in this block represent id
@@ -484,27 +475,23 @@ class Server {
                         var exist = false
                         for (i in clients.indices.reversed()) {  //在用户面板上显示这段
                             if (clients[i].user!!.id == content.toInt()) {
-                                clients[i].writer!!.println("\n${Calendar.getInstance().time}" +
-                                        "\n${speaker}悄悄地对你说: " +
-                                        "\n        $message") //用户端显示这段
+                                clients[i].writer!!.println("${speaker}悄悄地对你说: ${DEFAULT.NEWLINE}" +
+                                                            "        $message${DEFAULT.NEWLINE}") //用户端显示这段
                                 clients[i].writer!!.flush()
                                 exist = true
                             }
                         }
                         if (exist) {
-                            writer!!.println("\n${Calendar.getInstance().time}" +
-                                    "\n你对${content}说: " +
-                                    "\n        $message") //发送端
+                            writer!!.println("你对${content}说:${DEFAULT.NEWLINE}" +
+                                             "        $message${DEFAULT.NEWLINE}") //发送端
                             contentArea.append("\n${Calendar.getInstance().time}" +
                                     "\n${speaker}私聊$content: $message")
                         } else {
-                            writer!!.println("\n${Calendar.getInstance().time}" +
-                                    "\n没有这个用户")
+                            writer!!.println("没有这个用户${DEFAULT.NEWLINE}")
                             contentArea.append("\n${Calendar.getInstance().time}" +
                                     "\n${speaker}试图向一个不存在的用户发信息")
                         }
                         writer!!.flush()
-
                     }
                     else -> {
                         contentArea.append("\n${Calendar.getInstance().time}" +

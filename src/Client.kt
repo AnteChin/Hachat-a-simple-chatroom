@@ -1,7 +1,4 @@
-import java.awt.BorderLayout
-import java.awt.Color
-import java.awt.GridLayout
-import java.awt.Toolkit
+import java.awt.*
 import java.awt.event.ActionListener
 import java.awt.event.WindowAdapter
 import java.awt.event.WindowEvent
@@ -11,28 +8,20 @@ import java.io.InputStreamReader
 import java.io.PrintWriter
 import java.net.Socket
 import java.util.*
+import javax.swing.*
 
-import javax.swing.DefaultListModel
-import javax.swing.JButton
-import javax.swing.JFrame
-import javax.swing.JLabel
-import javax.swing.JList
-import javax.swing.JOptionPane
-import javax.swing.JPanel
-import javax.swing.JScrollPane
-import javax.swing.JSplitPane
-import javax.swing.JTextArea
-import javax.swing.JTextField
 import javax.swing.border.TitledBorder
+import javax.swing.text.StyleContext
 
 class Client {
-    lateinit var me :User
+    lateinit var me: User
 
     private val frame = JFrame("客户端")
     private val listModel = DefaultListModel<String>()
     private val userList = JList(listModel)
+    private val textPane = KTextPane()
+    private val doc = textPane.styledDocument
 
-    private val textArea = JTextArea()
     private val textField = JTextField()
     private val txtPort = JTextField(DEFAULT.PORT.toString())
     private val txtHostIp = JTextField(DEFAULT.IP)
@@ -42,7 +31,7 @@ class Client {
     private val btnSend = JButton("      ")
     private val northPanel = JPanel()
     private val southPanel = JPanel(BorderLayout())
-    private val rightScroll = JScrollPane(textArea)
+    private val rightScroll = JScrollPane(textPane)
     private val leftScroll = JScrollPane(userList)
     private val centerSplit = JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftScroll, rightScroll)
 
@@ -54,8 +43,6 @@ class Client {
     private val onLineUsers = HashMap<String, User>()// 所有在线用户
 
     init {
-        textArea.isEditable = false
-        textArea.foreground = Color.blue
 
         btnStart.background = Color.GREEN
         btnStop.background = Color.RED.darker()
@@ -73,8 +60,9 @@ class Client {
             add(btnStop)
             border = TitledBorder("连接信息")
         }
-
         rightScroll.border = TitledBorder("消息显示区")
+//        rightScroll.isOpaque = false
+//        rightScroll.viewport.isOpaque = false
         leftScroll.border = TitledBorder("在线用户")
 
         southPanel.add(textField, "Center")
@@ -83,11 +71,10 @@ class Client {
         centerSplit.dividerLocation = 100
 
         with(frame) {
-            layout = BorderLayout()
             add(northPanel, "North")
             add(centerSplit, "Center")
             add(southPanel, "South")
-            setSize(800, 600)
+            setSize(800, 640)
             val screen = Toolkit.getDefaultToolkit().screenSize
             frame.setLocation((screen.width - frame.width) / 3,
                     (screen.width - frame.height) / 3)
@@ -173,22 +160,22 @@ class Client {
             JOptionPane.showMessageDialog(frame, "消息不能为空！", "Error", JOptionPane.ERROR_MESSAGE)
             return
         }
-        if (message.startsWith(DEFAULT.DELIM)){
+        if (message.startsWith(DEFAULT.DELIM)) {
             JOptionPane.showMessageDialog(frame, "不要以${DEFAULT.DELIM}开头", "Error", JOptionPane.ERROR_MESSAGE)
             return
         }
         val stringTokenizer = StringTokenizer(message, DEFAULT.DELIM)
         var temp = stringTokenizer.nextToken()
-        when(temp){
-            COMMAND.HELP ->{
+        when (temp) {
+            COMMAND.HELP -> {
                 sendMessage(me.name + DEFAULT.DELIM + "HELP" + DEFAULT.DELIM + " ")
             }
-            COMMAND.TO ->{
+            COMMAND.TO -> {
                 var destination = stringTokenizer.nextToken() // destination id
                 var message = stringTokenizer.nextToken()
                 sendMessage(me.name + DEFAULT.DELIM + "CHAT" + DEFAULT.DELIM + destination + DEFAULT.DELIM + message)
             }
-            COMMAND.REGISTER ->{
+            COMMAND.REGISTER -> {
                 sendMessage(me.name + DEFAULT.DELIM + "REGISTER" + DEFAULT.DELIM + " ")
             }
             else -> {
@@ -203,7 +190,7 @@ class Client {
         writer.flush()
     }
 
-    private fun connectServer(port: Int, user : User): Boolean {
+    private fun connectServer(port: Int, user: User): Boolean {
         try {
             socket = Socket(user.ip, port)// 根据端口号和服务器ip建立连接
             writer = PrintWriter(socket.getOutputStream())
@@ -212,13 +199,17 @@ class Client {
             // 发送客户端用户基本信息(用户名和ip地址)
             sendMessage(user.name + DEFAULT.DELIM + socket.localAddress.toString() + DEFAULT.DELIM + user.id)
             // 开启接收消息的线程
-            messageThread = MessageThread(reader, textArea)
+            messageThread = MessageThread(reader, textPane)
             messageThread!!.start()
             isConnected = true// 已经连接上了
+            txtName.isEditable = false
+            txtPort.isEditable = false
+            txtHostIp.isEditable = false
             return true
         } catch (e: Exception) {
-            textArea.append("${Calendar.getInstance().time}\n" +
-                    "与端口号为：" + port + ",    IP地址为：${user.ip} 的服务器连接失败!" + "\r\n")
+
+            doc.insertString(0, "${Calendar.getInstance().time}\n" +
+                    "与端口号为：" + port + ",    IP地址为：${user.ip} 的服务器连接失败!" + "\r\n", null)
             isConnected = false// 未连接上
             return false
         }
@@ -235,6 +226,9 @@ class Client {
             writer.close()
             socket.close()
             isConnected = false
+            txtName.isEditable = true
+            txtPort.isEditable = true
+            txtHostIp.isEditable = true
         } catch (e1: IOException) {
             e1.printStackTrace()
             isConnected = true
@@ -242,7 +236,7 @@ class Client {
         return !isConnected
     }
 
-    internal inner class MessageThread(private val reader: BufferedReader?, private val textArea: JTextArea) : Thread() {
+    internal inner class MessageThread(private val reader: BufferedReader?, private val textPane: KTextPane) : Thread() {
         // 被动的关闭连接
         @Synchronized
         @Throws(Exception::class)
@@ -270,16 +264,19 @@ class Client {
                         val command = stringTokenizer.nextToken()// 服务器的命令
                         when (command) { //处理服务器发回来的指令
                             "CLOSE" -> {
-                                textArea.append("服务器已关闭!\r\n")
+                                doc.insertString(0, "服务器已关闭!\r\n", null)
                                 closeCon()// 被动的关闭连接
                                 return // 结束线程
                             }
                             "ADD" -> {// 有用户上线更新在线列表
                                 val username: String? = stringTokenizer.nextToken()
                                 val userIp: String? = stringTokenizer.nextToken()
-                                val userId : String? = stringTokenizer.nextToken()
+                                val userId: String? = stringTokenizer.nextToken()
                                 if (username != null && userIp != null && userId != null) {
                                     val user = User(username, userIp, userId)
+                                    doc.insertString(0, "\n${Calendar.getInstance().time}" +
+                                            "\nid: ${userId}, 来自${userIp} 的用户${username}" +
+                                            "\n上线了!\n", null)
                                     onLineUsers[username] = user
                                     listModel.addElement("$username($userId)")
                                 }
@@ -294,25 +291,31 @@ class Client {
                                 val size = stringTokenizer.nextToken().toInt()
                                 var username: String?
                                 var userIp: String?
-                                var userId : String?
+                                var userId: String?
                                 for (i in 0 until size) {
                                     username = stringTokenizer.nextToken()
                                     userIp = stringTokenizer.nextToken()
                                     userId = stringTokenizer.nextToken()
-                                    val user = User(username!!, userIp!!,userId)
+                                    val user = User(username!!, userIp!!, userId)
                                     onLineUsers[username] = user
                                     listModel.addElement("$username($userId)")
                                 }
                             }
                             "MAX" -> {// 人数已达上限
-                                textArea.append(stringTokenizer.nextToken()
-                                        + stringTokenizer.nextToken() + "\r\n")
+                                doc.insertString(0, stringTokenizer.nextToken()
+                                        + stringTokenizer.nextToken() + "\r\n", null)
                                 closeCon()// 被动的关闭连接
                                 JOptionPane.showMessageDialog(frame, "服务器缓冲区已满！", "错误",
                                         JOptionPane.ERROR_MESSAGE)
                                 return // 结束线程
                             }
-                            else -> textArea.append(message + "\r\n")
+                            else -> {
+                                message = message.replace(DEFAULT.NEWLINE,"\n")
+                                doc.insertString(0, "\n$message", null)
+                                doc.setParagraphAttributes(0, 1, textPane.style, false)
+                                doc.insertString(0,"${Calendar.getInstance().time}",null)//设置日历的格式
+                            }
+
                         }
                     } else
                         continue
