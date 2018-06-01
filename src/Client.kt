@@ -26,9 +26,9 @@ class Client {
     private val txtPort = JTextField(DEFAULT.PORT.toString())
     private val txtHostIp = JTextField(DEFAULT.IP)
     private val txtName = JTextField("用户名")
-    private val btnStart = JButton()
-    private val btnStop = JButton()
-    private val btnSend = JButton("      ")
+    private val btnStart = JButton("开始")
+    private val btnStop = JButton("终止")
+    private val btnSend = JButton("发送")
     private val northPanel = JPanel()
     private val southPanel = JPanel(BorderLayout())
     private val rightScroll = JScrollPane(textPane)
@@ -43,7 +43,6 @@ class Client {
     private val onLineUsers = HashMap<String, User>()// 所有在线用户
 
     init {
-
         btnStart.background = Color.GREEN
         btnStop.background = Color.RED.darker()
         btnSend.background = Color.BLUE.brighter()
@@ -207,7 +206,6 @@ class Client {
             txtHostIp.isEditable = false
             return true
         } catch (e: Exception) {
-
             doc.insertString(0, "${Calendar.getInstance().time}\n" +
                     "与端口号为：" + port + ",    IP地址为：${user.ip} 的服务器连接失败!" + "\r\n", null)
             isConnected = false// 未连接上
@@ -287,6 +285,10 @@ class Client {
                             "DELETE" -> {// 有用户下线更新在线列表
                                 val username = stringTokenizer.nextToken()
                                 val userId = stringTokenizer.nextToken()
+                                doc.setParagraphAttributes(0, 1, textPane.friend, false)
+                                doc.insertString(0, "\nid: ${userId} 的用户${username}下线了!\n", null)
+                                doc.setParagraphAttributes(0, 1, textPane.calander, false)
+                                doc.insertString(0,"\n${Calendar.getInstance().time}",null)//设置日历的格式
                                 onLineUsers.remove(username)
                                 listModel.removeElement("${username}(${userId})")
                             }
@@ -318,7 +320,6 @@ class Client {
                                 doc.setParagraphAttributes(0, 1, textPane.calander, false)
                                 doc.insertString(0,"\n${Calendar.getInstance().time}",null)//设置日历的格式
                             }
-
                         }
                     } else
                         continue

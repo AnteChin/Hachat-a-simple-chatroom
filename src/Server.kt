@@ -23,9 +23,9 @@ class Server {
     private var txtMessage = JTextField()
     private var txtMaxUserNumber = JTextField(DEFAULT.USER_COUNT.toString())
     private var txtPort = JTextField(DEFAULT.PORT.toString())
-    private var btnStart = JButton()
-    private var btnStop = JButton()
-    private var btnSend = JButton("      ")
+    private var btnStart = JButton("开始")
+    private var btnStop = JButton("终止")
+    private var btnSend = JButton("发送")
     private var listModel = DefaultListModel<String>()  //用户列表
     private var userList = JList(listModel)
     private var southPanel = JPanel(BorderLayout())
@@ -74,7 +74,7 @@ class Server {
             add(northPanel, "North")
             add(centerSplit, "Center")
             add(southPanel, "South")
-            setSize(600, 400)
+            setSize(800, 600)
             val screenSize = Toolkit.getDefaultToolkit().screenSize
             setLocation((screenSize.width - frame.width) / 2, (screenSize.height - frame.height) / 2)
             isVisible = true
@@ -175,10 +175,6 @@ class Server {
             var stringTokenizer = StringTokenizer(message, DEFAULT.DELIM)
             var command = stringTokenizer.nextToken()
             var id = stringTokenizer.nextToken()
-/*              contentArea.append("$command")
-                JOptionPane.showMessageDialog(frame, "禁言语法错误！", "Error", JOptionPane.ERROR_MESSAGE)
-                return
-            */
             when (command) {
                 COMMAND.SHUTUP -> {
                     var found = false
@@ -322,7 +318,6 @@ class Server {
             }
         }
     }
-
     //服务器端的文字更新以 contentArea.append() 的方式更新
     //客户端的文字则写入到他们对应的输出流中
     //writer!!.println 的东西最后都会在客户端显示出来
@@ -425,7 +420,7 @@ class Server {
 
                     // 向所有在线用户发送该用户的下线命令
                     for (i in clients.indices.reversed()) {
-                        clients[i].writer!!.println("DELETE" + DEFAULT.DELIM + speaker + DEFAULT.DELIM + content)
+                        clients[i].writer!!.println("DELETE" + DEFAULT.DELIM + user!!.name + DEFAULT.DELIM + user!!.id)
                         clients[i].writer!!.flush()
                     }
 
@@ -467,7 +462,7 @@ class Server {
                     "HELP" -> {
                         writer!!.println("${DEFAULT.NEWLINE}${DEFAULT.MANUAL}${DEFAULT.NEWLINE}") //用户端显示这段
                         writer!!.flush()
-                        contentArea.append("${DEFAULT.NEWLINE}$speaker 请求了一次帮助")
+                        contentArea.append("\n$speaker 请求了一次帮助")
                     }
                     "CHAT" -> {
                         //content in this block represent id

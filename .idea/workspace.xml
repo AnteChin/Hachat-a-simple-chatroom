@@ -2,15 +2,16 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/Client.kt" />
-    <bookmark url="file://$PROJECT_DIR$/src/Server.kt" line="382" />
-    <bookmark url="file://$PROJECT_DIR$/src/Server.kt" line="361" />
+    <bookmark url="file://$PROJECT_DIR$/src/Server.kt" line="377" />
+    <bookmark url="file://$PROJECT_DIR$/src/Server.kt" line="356" />
     <bookmark url="file://$PROJECT_DIR$/src/Server.kt" line="174" />
-    <bookmark url="file://$PROJECT_DIR$/src/Server.kt" line="454" />
-    <bookmark url="file://$PROJECT_DIR$/src/Client.kt" line="210" />
-    <bookmark url="file://$PROJECT_DIR$/src/Client.kt" line="267" />
-    <bookmark url="file://$PROJECT_DIR$/src/Client.kt" line="307" />
-    <bookmark url="file://$PROJECT_DIR$/src/Client.kt" line="314" />
-    <bookmark url="file://$PROJECT_DIR$/src/Client.kt" line="278" />
+    <bookmark url="file://$PROJECT_DIR$/src/Server.kt" line="449" />
+    <bookmark url="file://$PROJECT_DIR$/src/Client.kt" line="208" />
+    <bookmark url="file://$PROJECT_DIR$/src/Client.kt" line="265" />
+    <bookmark url="file://$PROJECT_DIR$/src/Client.kt" line="309" />
+    <bookmark url="file://$PROJECT_DIR$/src/Client.kt" line="316" />
+    <bookmark url="file://$PROJECT_DIR$/src/Client.kt" line="276" />
+    <bookmark url="file://$PROJECT_DIR$/src/DEFAULT.kt" line="15" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="616bb026-7e97-40fc-9681-70d24902cb13" name="Default" comment="">
@@ -57,10 +58,23 @@
       <file leaf-file-name="Server.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="490" column="54" lean-forward="true" selection-start-line="490" selection-start-column="54" selection-end-line="490" selection-end-column="54" />
+            <state relative-caret-position="-163">
+              <caret line="376" selection-start-line="376" selection-end-line="376" />
               <folding>
+                <element signature="e#1535#5613#0" />
+                <element signature="e#5689#5823#1" />
+                <element signature="e#5855#5988#1" />
+                <element signature="e#6089#6215#1" />
+                <element signature="e#8791#8962#1" />
                 <element signature="n#!!block;n#serverStart#0;n#!!block;n#Server#0" />
+                <element signature="n#!!block;n#closeServer#0;n#!!block;n#Server#0" />
+                <element signature="n#!!block;n#sendServerMessage#0;n#!!block;n#Server#0" />
+                <element signature="e#10908#11877#1" />
+                <element signature="e#13943#14351#1" />
+                <element signature="e#15569#16244#0" />
+                <element signature="e#18332#18850#0" />
+                <element signature="e#18396#18686#1" />
+                <element signature="e#19165#20567#0" />
               </folding>
             </state>
           </provider>
@@ -69,18 +83,22 @@
       <file leaf-file-name="Client.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="276" column="77" lean-forward="true" selection-start-line="276" selection-start-column="77" selection-end-line="276" selection-end-column="77" />
+            <state relative-caret-position="1183">
+              <caret line="307" column="29" lean-forward="true" selection-start-line="307" selection-start-column="29" selection-end-line="307" selection-end-column="29" />
               <folding>
                 <element signature="e#0#381#0" expanded="true" />
-                <element signature="e#3336#4461#2" />
-                <element signature="e#4534#5142#2" />
-                <element signature="e#5510#5645#1" />
-                <element signature="e#5738#5864#1" />
-                <element signature="e#5911#6051#1" />
+                <element signature="e#1559#5117#0" />
+                <element signature="e#5186#5321#1" />
+                <element signature="e#5414#5540#1" />
+                <element signature="e#5588#5728#1" />
+                <element signature="n#!!block;n#sendMessage#0;n#!!block;n#Client#0" />
                 <element signature="n#!!block;n#connectServer#0;n#!!block;n#Client#0" />
                 <element signature="n#!!block;n#closeConnection#0;n#!!block;n#Client#0" />
                 <element signature="n#!!block;n#closeCon#0;n#!!block;n#MessageThread#0;n#!!block;n#Client#0" />
+                <element signature="e#9439#9643#0" />
+                <element signature="e#9681#10781#0" />
+                <element signature="e#11201#12019#0" />
+                <element signature="e#12057#12518#0" />
               </folding>
             </state>
           </provider>
@@ -89,8 +107,8 @@
       <file leaf-file-name="KTextPane.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/KTextPane.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="558">
+              <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
               <folding>
                 <element signature="e#0#67#0" expanded="true" />
               </folding>
@@ -119,8 +137,8 @@
       <file leaf-file-name="COMMAND.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/COMMAND.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="306">
+              <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
               <folding>
                 <element signature="e#0#186#0" expanded="true" />
               </folding>
@@ -131,8 +149,8 @@
       <file leaf-file-name="main.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            <state relative-caret-position="90">
+              <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -162,14 +180,14 @@
       <list>
         <option value="$PROJECT_DIR$/src/Net.kt" />
         <option value="$PROJECT_DIR$/Test.java" />
-        <option value="$PROJECT_DIR$/src/main.kt" />
         <option value="$PROJECT_DIR$/src/User.kt" />
         <option value="$PROJECT_DIR$/src/COMMAND.kt" />
         <option value="$PROJECT_DIR$/src/KTextArea.kt" />
-        <option value="$PROJECT_DIR$/src/DEFAULT.kt" />
-        <option value="$PROJECT_DIR$/src/Server.kt" />
-        <option value="$PROJECT_DIR$/src/Client.kt" />
+        <option value="$PROJECT_DIR$/src/main.kt" />
         <option value="$PROJECT_DIR$/src/KTextPane.kt" />
+        <option value="$PROJECT_DIR$/src/Server.kt" />
+        <option value="$PROJECT_DIR$/src/DEFAULT.kt" />
+        <option value="$PROJECT_DIR$/src/Client.kt" />
       </list>
     </option>
   </component>
@@ -188,10 +206,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="1554" />
-    <option name="height" value="849" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="91" />
+    <option name="y" value="445" />
+    <option name="width" value="1555" />
+    <option name="height" value="850" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -199,8 +218,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,21 +229,41 @@
             <path>
               <item name="HaChat" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hachat" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HaChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hachat" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HaChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hachat" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HaChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="lib&#9;FILE&#9;file://C:/Users/asus/Desktop/Hachat/.idea/libraries&#10;libra&#9;FILE&#9;file://C:/Users/asus/Desktop/Hachat/.idea/libraries" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Limit_QQ-master" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/beautyeye/beautyeye-master/dist/beautyeye_lnf.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -321,16 +359,16 @@
       <workItem from="1527564754328" duration="10271000" />
       <workItem from="1527590976809" duration="4219000" />
       <workItem from="1527600229177" duration="5105000" />
-      <workItem from="1527646412078" duration="13869000" />
+      <workItem from="1527646412078" duration="14599000" />
+      <workItem from="1527680463383" duration="12407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121453000" />
+    <option name="totallyTimeSpent" value="134590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -342,13 +380,12 @@
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.3297587" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" weight="0.32911393" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.3300562" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.3300562" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.121983916" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.123324394" />
       <window_info anchor="right" id="Database" order="6" weight="0.32931727" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3286517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="5" weight="0.24966533" />
       <window_info id="UI Designer" order="4" />
@@ -360,6 +397,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3286517" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +413,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="31" />
+      <option name="time" value="36" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -383,48 +421,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Server.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7830">
-          <caret line="435" column="65" selection-start-line="435" selection-start-column="65" selection-end-line="435" selection-end-column="65" />
-          <folding>
-            <element signature="n#!!block;n#serverStart#0;n#!!block;n#Server#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5202">
-          <caret line="289" column="60" lean-forward="true" selection-start-line="289" selection-start-column="60" selection-end-line="289" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#381#0" expanded="true" />
-            <element signature="e#3336#4461#2" />
-            <element signature="e#4534#5142#2" />
-            <element signature="e#5510#5645#1" />
-            <element signature="e#5738#5864#1" />
-            <element signature="e#5911#6051#1" />
-            <element signature="n#!!block;n#connectServer#0;n#!!block;n#Client#0" />
-            <element signature="n#!!block;n#closeConnection#0;n#!!block;n#Client#0" />
-            <element signature="n#!!block;n#closeCon#0;n#!!block;n#MessageThread#0;n#!!block;n#Client#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/User.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DEFAULT.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/COMMAND.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -447,7 +443,20 @@
         <state relative-caret-position="6948">
           <caret line="386" selection-start-line="386" selection-end-line="386" />
           <folding>
+            <element signature="e#1535#5613#0" />
+            <element signature="e#5689#5823#1" />
+            <element signature="e#5855#5988#1" />
+            <element signature="e#6089#6215#1" />
+            <element signature="e#8791#8962#1" />
             <element signature="n#!!block;n#serverStart#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#closeServer#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#sendServerMessage#0;n#!!block;n#Server#0" />
+            <element signature="e#10908#11877#1" />
+            <element signature="e#13943#14351#1" />
+            <element signature="e#15569#16244#0" />
+            <element signature="e#18332#18850#0" />
+            <element signature="e#18396#18686#1" />
+            <element signature="e#19165#20567#0" />
           </folding>
         </state>
       </provider>
@@ -486,14 +495,18 @@
           <caret line="233" column="26" lean-forward="true" selection-start-line="233" selection-start-column="26" selection-end-line="233" selection-end-column="26" />
           <folding>
             <element signature="e#0#381#0" expanded="true" />
-            <element signature="e#3336#4461#2" />
-            <element signature="e#4534#5142#2" />
-            <element signature="e#5510#5645#1" />
-            <element signature="e#5738#5864#1" />
-            <element signature="e#5911#6051#1" />
+            <element signature="e#1559#5117#0" />
+            <element signature="e#5186#5321#1" />
+            <element signature="e#5414#5540#1" />
+            <element signature="e#5588#5728#1" />
+            <element signature="n#!!block;n#sendMessage#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#connectServer#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeConnection#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeCon#0;n#!!block;n#MessageThread#0;n#!!block;n#Client#0" />
+            <element signature="e#9439#9643#0" />
+            <element signature="e#9681#10781#0" />
+            <element signature="e#11201#12019#0" />
+            <element signature="e#12057#12518#0" />
           </folding>
         </state>
       </provider>
@@ -503,7 +516,20 @@
         <state relative-caret-position="5490">
           <caret line="359" column="53" selection-start-line="359" selection-start-column="53" selection-end-line="359" selection-end-column="53" />
           <folding>
+            <element signature="e#1535#5613#0" />
+            <element signature="e#5689#5823#1" />
+            <element signature="e#5855#5988#1" />
+            <element signature="e#6089#6215#1" />
+            <element signature="e#8791#8962#1" />
             <element signature="n#!!block;n#serverStart#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#closeServer#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#sendServerMessage#0;n#!!block;n#Server#0" />
+            <element signature="e#10908#11877#1" />
+            <element signature="e#13943#14351#1" />
+            <element signature="e#15569#16244#0" />
+            <element signature="e#18332#18850#0" />
+            <element signature="e#18396#18686#1" />
+            <element signature="e#19165#20567#0" />
           </folding>
         </state>
       </provider>
@@ -514,14 +540,18 @@
           <caret line="155" column="31" selection-start-line="155" selection-start-column="31" selection-end-line="155" selection-end-column="31" />
           <folding>
             <element signature="e#0#381#0" expanded="true" />
-            <element signature="e#3336#4461#2" />
-            <element signature="e#4534#5142#2" />
-            <element signature="e#5510#5645#1" />
-            <element signature="e#5738#5864#1" />
-            <element signature="e#5911#6051#1" />
+            <element signature="e#1559#5117#0" />
+            <element signature="e#5186#5321#1" />
+            <element signature="e#5414#5540#1" />
+            <element signature="e#5588#5728#1" />
+            <element signature="n#!!block;n#sendMessage#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#connectServer#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeConnection#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeCon#0;n#!!block;n#MessageThread#0;n#!!block;n#Client#0" />
+            <element signature="e#9439#9643#0" />
+            <element signature="e#9681#10781#0" />
+            <element signature="e#11201#12019#0" />
+            <element signature="e#12057#12518#0" />
           </folding>
         </state>
       </provider>
@@ -559,7 +589,20 @@
         <state relative-caret-position="6462">
           <caret line="359" column="53" lean-forward="true" selection-start-line="359" selection-start-column="53" selection-end-line="359" selection-end-column="53" />
           <folding>
+            <element signature="e#1535#5613#0" />
+            <element signature="e#5689#5823#1" />
+            <element signature="e#5855#5988#1" />
+            <element signature="e#6089#6215#1" />
+            <element signature="e#8791#8962#1" />
             <element signature="n#!!block;n#serverStart#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#closeServer#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#sendServerMessage#0;n#!!block;n#Server#0" />
+            <element signature="e#10908#11877#1" />
+            <element signature="e#13943#14351#1" />
+            <element signature="e#15569#16244#0" />
+            <element signature="e#18332#18850#0" />
+            <element signature="e#18396#18686#1" />
+            <element signature="e#19165#20567#0" />
           </folding>
         </state>
       </provider>
@@ -598,14 +641,18 @@
           <caret line="155" column="31" lean-forward="true" selection-start-line="155" selection-start-column="31" selection-end-line="155" selection-end-column="31" />
           <folding>
             <element signature="e#0#381#0" expanded="true" />
-            <element signature="e#3336#4461#2" />
-            <element signature="e#4534#5142#2" />
-            <element signature="e#5510#5645#1" />
-            <element signature="e#5738#5864#1" />
-            <element signature="e#5911#6051#1" />
+            <element signature="e#1559#5117#0" />
+            <element signature="e#5186#5321#1" />
+            <element signature="e#5414#5540#1" />
+            <element signature="e#5588#5728#1" />
+            <element signature="n#!!block;n#sendMessage#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#connectServer#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeConnection#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeCon#0;n#!!block;n#MessageThread#0;n#!!block;n#Client#0" />
+            <element signature="e#9439#9643#0" />
+            <element signature="e#9681#10781#0" />
+            <element signature="e#11201#12019#0" />
+            <element signature="e#12057#12518#0" />
           </folding>
         </state>
       </provider>
@@ -615,7 +662,20 @@
         <state relative-caret-position="7326">
           <caret line="407" column="21" lean-forward="true" selection-start-line="407" selection-start-column="21" selection-end-line="407" selection-end-column="21" />
           <folding>
+            <element signature="e#1535#5613#0" />
+            <element signature="e#5689#5823#1" />
+            <element signature="e#5855#5988#1" />
+            <element signature="e#6089#6215#1" />
+            <element signature="e#8791#8962#1" />
             <element signature="n#!!block;n#serverStart#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#closeServer#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#sendServerMessage#0;n#!!block;n#Server#0" />
+            <element signature="e#10908#11877#1" />
+            <element signature="e#13943#14351#1" />
+            <element signature="e#15569#16244#0" />
+            <element signature="e#18332#18850#0" />
+            <element signature="e#18396#18686#1" />
+            <element signature="e#19165#20567#0" />
           </folding>
         </state>
       </provider>
@@ -626,14 +686,18 @@
           <caret line="287" column="74" lean-forward="true" selection-start-line="287" selection-start-column="74" selection-end-line="287" selection-end-column="74" />
           <folding>
             <element signature="e#0#381#0" expanded="true" />
-            <element signature="e#3336#4461#2" />
-            <element signature="e#4534#5142#2" />
-            <element signature="e#5510#5645#1" />
-            <element signature="e#5738#5864#1" />
-            <element signature="e#5911#6051#1" />
+            <element signature="e#1559#5117#0" />
+            <element signature="e#5186#5321#1" />
+            <element signature="e#5414#5540#1" />
+            <element signature="e#5588#5728#1" />
+            <element signature="n#!!block;n#sendMessage#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#connectServer#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeConnection#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeCon#0;n#!!block;n#MessageThread#0;n#!!block;n#Client#0" />
+            <element signature="e#9439#9643#0" />
+            <element signature="e#9681#10781#0" />
+            <element signature="e#11201#12019#0" />
+            <element signature="e#12057#12518#0" />
           </folding>
         </state>
       </provider>
@@ -671,7 +735,20 @@
         <state relative-caret-position="1152">
           <caret line="64" column="8" lean-forward="true" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
           <folding>
+            <element signature="e#1535#5613#0" />
+            <element signature="e#5689#5823#1" />
+            <element signature="e#5855#5988#1" />
+            <element signature="e#6089#6215#1" />
+            <element signature="e#8791#8962#1" />
             <element signature="n#!!block;n#serverStart#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#closeServer#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#sendServerMessage#0;n#!!block;n#Server#0" />
+            <element signature="e#10908#11877#1" />
+            <element signature="e#13943#14351#1" />
+            <element signature="e#15569#16244#0" />
+            <element signature="e#18332#18850#0" />
+            <element signature="e#18396#18686#1" />
+            <element signature="e#19165#20567#0" />
           </folding>
         </state>
       </provider>
@@ -689,14 +766,18 @@
           <caret line="298" column="5" selection-start-line="298" selection-start-column="5" selection-end-line="298" selection-end-column="5" />
           <folding>
             <element signature="e#0#381#0" expanded="true" />
-            <element signature="e#3336#4461#2" />
-            <element signature="e#4534#5142#2" />
-            <element signature="e#5510#5645#1" />
-            <element signature="e#5738#5864#1" />
-            <element signature="e#5911#6051#1" />
+            <element signature="e#1559#5117#0" />
+            <element signature="e#5186#5321#1" />
+            <element signature="e#5414#5540#1" />
+            <element signature="e#5588#5728#1" />
+            <element signature="n#!!block;n#sendMessage#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#connectServer#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeConnection#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeCon#0;n#!!block;n#MessageThread#0;n#!!block;n#Client#0" />
+            <element signature="e#9439#9643#0" />
+            <element signature="e#9681#10781#0" />
+            <element signature="e#11201#12019#0" />
+            <element signature="e#12057#12518#0" />
           </folding>
         </state>
       </provider>
@@ -724,39 +805,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test.java" />
     <entry file="file://$PROJECT_DIR$/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/img/background_flower.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/background.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/COMMAND.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#186#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KTextArea.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KTextArea.kt" />
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/javax/swing/text/Document.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -778,10 +827,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/kotlinc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/User.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/COMMAND.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KTextPane.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#67#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -792,43 +883,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server.kt">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/io/BufferedReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="490" column="54" lean-forward="true" selection-start-line="490" selection-start-column="54" selection-end-line="490" selection-end-column="54" />
-          <folding>
-            <element signature="n#!!block;n#serverStart#0;n#!!block;n#Server#0" />
-          </folding>
+        <state relative-caret-position="142">
+          <caret line="316" selection-start-line="316" selection-end-line="316" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/KTextPane.kt">
+    <entry file="file://$PROJECT_DIR$/src/Server.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="-163">
+          <caret line="376" selection-start-line="376" selection-end-line="376" />
           <folding>
-            <element signature="e#0#67#0" expanded="true" />
+            <element signature="e#1535#5613#0" />
+            <element signature="e#5689#5823#1" />
+            <element signature="e#5855#5988#1" />
+            <element signature="e#6089#6215#1" />
+            <element signature="e#8791#8962#1" />
+            <element signature="n#!!block;n#serverStart#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#closeServer#0;n#!!block;n#Server#0" />
+            <element signature="n#!!block;n#sendServerMessage#0;n#!!block;n#Server#0" />
+            <element signature="e#10908#11877#1" />
+            <element signature="e#13943#14351#1" />
+            <element signature="e#15569#16244#0" />
+            <element signature="e#18332#18850#0" />
+            <element signature="e#18396#18686#1" />
+            <element signature="e#19165#20567#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="276" column="77" lean-forward="true" selection-start-line="276" selection-start-column="77" selection-end-line="276" selection-end-column="77" />
+        <state relative-caret-position="1183">
+          <caret line="307" column="29" lean-forward="true" selection-start-line="307" selection-start-column="29" selection-end-line="307" selection-end-column="29" />
           <folding>
             <element signature="e#0#381#0" expanded="true" />
-            <element signature="e#3336#4461#2" />
-            <element signature="e#4534#5142#2" />
-            <element signature="e#5510#5645#1" />
-            <element signature="e#5738#5864#1" />
-            <element signature="e#5911#6051#1" />
+            <element signature="e#1559#5117#0" />
+            <element signature="e#5186#5321#1" />
+            <element signature="e#5414#5540#1" />
+            <element signature="e#5588#5728#1" />
+            <element signature="n#!!block;n#sendMessage#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#connectServer#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeConnection#0;n#!!block;n#Client#0" />
             <element signature="n#!!block;n#closeCon#0;n#!!block;n#MessageThread#0;n#!!block;n#Client#0" />
+            <element signature="e#9439#9643#0" />
+            <element signature="e#9681#10781#0" />
+            <element signature="e#11201#12019#0" />
+            <element signature="e#12057#12518#0" />
           </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Hachat</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>KotlinJavaRuntime</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

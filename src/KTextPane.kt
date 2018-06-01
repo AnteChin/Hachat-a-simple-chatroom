@@ -1,6 +1,6 @@
-import javax.swing.*;
-import javax.swing.text.*;
-import java.awt.*;
+import javax.swing.*
+import javax.swing.text.*
+import java.awt.*
 
 
 class KTextPane() : JTextPane() {
@@ -17,7 +17,7 @@ class KTextPane() : JTextPane() {
         isOpaque = false
 
         with(calander) {
-            addAttribute(StyleConstants.Foreground, Color.DARK_GRAY)
+            addAttribute(StyleConstants.Foreground, Color.RED)
             addAttribute(StyleConstants.FontSize, 14)
             addAttribute(StyleConstants.FontFamily, "Rockwell")
             addAttribute(StyleConstants.Italic, false)
@@ -33,7 +33,7 @@ class KTextPane() : JTextPane() {
         with(friend) {
             addAttribute(StyleConstants.Foreground, Color.DARK_GRAY)
             addAttribute(StyleConstants.FontSize, 14)
-            addAttribute(StyleConstants.FontFamily, "宋体")
+            addAttribute(StyleConstants.FontFamily, "微软雅黑")
             addAttribute(StyleConstants.Italic, true)
         }
 
