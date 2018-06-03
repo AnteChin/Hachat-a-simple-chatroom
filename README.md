@@ -24,7 +24,7 @@ To implement functions using the instruction set, see `COMMAND.KT`<br>
 The implemented client instructions are: <br>
 * `-reg`: Registration <br>
 * `-help`: Get Help <br>
-* `-to`: private chat, format `-to# id# your message, `#` is delimiter, if you want to modify, find `DELIM` under `DEFAULT.kt`<br>
+* `-to`: private chat, format `-to# id# your message`, `#` is delimiter, if you want to modify, find `DELIM` under `DEFAULT.kt`<br>
 
 Server-side features already implemented: <br>
 * `-ban`: banned, in the format `-ban#other id` <br>
